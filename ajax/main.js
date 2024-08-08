@@ -1,43 +1,23 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const btnBuscarCep = document.getElementById('btn-buscar-cep');
-    const inputCep = document.getElementById('CEP');
-    const inputEndereco = document.getElementById('endereco');
+document.addEventListener('DOMContentLoaded', function() {
+    const nameElement = document.querySelector('#name');
+    const usernameElement = document.querySelector('#username');
+    const avatarElement = document.querySelector('#avatar');
+    const reposElement = document.querySelector('#repos');
+    const followersElement = document.querySelector('#followers');
+    const followingElement = document.querySelector('#following');
+    const linkElement = document.querySelector('#link');
 
-    btnBuscarCep.addEventListener('click', async () => {
-        const cep = inputCep.value.trim();
-
-        if (cep === '') {
-            alert('Por favor, insira um CEP válido.');
-            return;
-        }
-
-        const endpoint = `https://viacep.com.br/ws/${cep}/json`;
-
-        try {
-            const response = await fetch(endpoint);
-
-            if (!response.ok) {
-                throw new Error('Erro ao buscar o CEP.');
-            }
-
-            const data = await response.json();
-
-            if (data.erro) {
-                alert('CEP não encontrado.');
-                return;
-            }
-
-            const logradouro = data.logradouro;
-            const bairro = data.bairro;
-            const cidade = data.localidade;
-            const estado = data.uf;
-            const endereco = `${logradouro}, ${bairro} - ${cidade} - ${estado}`;
-
-            inputEndereco.value = endereco;
-
-        } catch (error) {
-            console.error('Erro:', error);
-            alert('Ocorreu um erro ao buscar o CEP. Tente novamente mais tarde.');
-        }
-    });
+    fetch('https://api.github.com/users/RafInlove')
+        .then(function(res) {
+            return res.json();
+        })
+        .then(function(json) {
+            nameElement.innerText = json.name;
+            usernameElement.innerText = json.login;
+            avatarElement.src = json.avatar_url;
+            followingElement.innerText = json.following;
+            followersElement.innerText = json.followers;
+            repos.innerText = json.public_repos;
+            linkElement.href = json.html_url;
+        });
 });
