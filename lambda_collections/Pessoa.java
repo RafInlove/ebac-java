@@ -1,30 +1,22 @@
-class Pessoa {
+public class Pessoa {
     private String nome;
-    private String sexo;
-
-    public Pessoa(String nome, String sexo) {
-        this.nome = nome;
-        this.sexo = sexo;
-    }
+    private String genero;
 
     public Pessoa(String nome) {
         this.nome = nome;
     }
 
-    public String getNome() {
-        return nome;
+    public Pessoa(String nome, String genero) {
+        this.nome = nome;
+        this.genero = genero;
     }
 
-    public String getSexo() {
-        return sexo;
+    public String getGenero() {
+        return genero;
     }
 
     @Override
     public String toString() {
-        if (sexo == null) {
-            return nome;
-        } else {
-            return nome + " - " + sexo;
-        }
+        return nome + (genero != null ? " (" + genero + ")" : "");
     }
 }
