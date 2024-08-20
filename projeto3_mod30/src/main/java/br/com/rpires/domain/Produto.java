@@ -4,6 +4,7 @@
 package br.com.rpires.domain;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 import anotacao.ColunaTabela;
 import anotacao.Tabela;
@@ -32,6 +33,9 @@ public class Produto implements Persistente {
 	
 	@ColunaTabela(dbName = "valor", setJavaName = "setValor")
 	private BigDecimal valor;
+
+	@ColunaTabela(dbName = "validade", setJavaName = "setValidade")
+	private BigDecimal validade;
 
 	public String getCodigo() {
 		return codigo;
@@ -71,6 +75,13 @@ public class Produto implements Persistente {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public BigDecimal getValidade() {
+		return validade;
+	}
+	public void setSalidade(BigDecimal validade) {
+		this.validade = validade;
 	}
 	
 }
