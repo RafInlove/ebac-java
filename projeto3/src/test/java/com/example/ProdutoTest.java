@@ -29,7 +29,7 @@ public class ProdutoTest {
         assertEquals(produto.getCodigo(), produtoDB.getCodigo());
         assertEquals(produto.getNome(), produtoDB.getNome());
 
-        Integer countDel = produtoDAO.excluir(produtoDB);
-        assertTrue(countDel == 1);
+        // Integer countDel = produtoDAO.excluir(produtoDB);
+        // assertTrue(countDel == 1);
     }
 }

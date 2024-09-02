@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://jakarta.ee/xml/ns/persistence"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://jakarta.ee/xml/ns/persistence http://jakarta.ee/xml/ns/persistence/persistence_2_1.xsd"
+                version="2.1">
+
+    <persistence-unit name="produtoPU">
+        <class>com.mod32.Produto</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/projet3_db"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgre"/>
+            <property name="jakarta.persistence.jdbc.password" value="rW1DP3UYbNDX"/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+
+            <!-- Configurações adicionais do Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>

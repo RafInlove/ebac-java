@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.45.1">
+<file name="C:\Users\rapha\Documents\ebac-java\exercicio\src\main\java\com\mod32\App.java">
+</file>
+<file name="C:\Users\rapha\Documents\ebac-java\exercicio\src\main\java\com\mod32\Produto.java">
+<error line="8" column="1" severity="error" message="Falta o comentário Javadoc." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
+<error line="10" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
+<error line="14" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
+</file>
+<file name="C:\Users\rapha\Documents\ebac-java\exercicio\src\test\java\com\mod32\AppTest.java">
+</file>
+</checkstyle>

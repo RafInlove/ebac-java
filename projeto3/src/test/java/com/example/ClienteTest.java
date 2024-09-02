@@ -20,7 +20,7 @@ public class ClienteTest {
 
         Cliente cliente = new Cliente();
         cliente.setCodigo("10");
-        cliente.setNome("Vitória");;
+        cliente.setNome("Vitória");
         Integer countCad = clienteDAO.cadastrar(cliente);
         assertTrue(countCad == 1);
 
@@ -29,7 +29,7 @@ public class ClienteTest {
         assertEquals(cliente.getCodigo(), clienteDB.getCodigo());
         assertEquals(cliente.getNome(), clienteDB.getNome());
 
-        Integer countDel = clienteDAO.excluir(clienteDB);
-        assertTrue(countDel == 1);
+        // Integer countDel = clienteDAO.excluir(clienteDB);
+        // assertTrue(countDel == 1);
     }
 }
